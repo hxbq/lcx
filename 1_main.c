@@ -3,7 +3,8 @@
 //何熙
 #include <stdio.h>
 int main()
-{   float C = 0;
+{  
+    float C = 0;
     //float T = C*9/5+32;
     scanf ("%f",&C);
     float T = C*9/5+32;
