@@ -3,7 +3,7 @@
 //何熙
 #include<stdio.h>
 int main()
-{
+{ 
     int score = 0;
     scanf ("%d",&score);
     if(89 < score &&score < 100)
