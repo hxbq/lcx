@@ -6,7 +6,7 @@ int main()
 {
     int a,b = 0;
     char op;
-    scanf ("%d,%d,%c",&a,&b,&op);
+    scanf ("%d %d %c",&a,&b,&op);
     if(op == '+')
     {
         int C = a+b;
