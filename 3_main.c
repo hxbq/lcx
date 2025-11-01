@@ -2,30 +2,42 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
+int isPrime(int num)
+{
+    if(num <= 1)
+    {
+        return 0;
+    }
+    if(num == 2)
+    {
+        return 1;
+    }
+    if(num % 2 == 0 )
+    {
+        return 0;
+    }
+    int i = 3;
+    while(i*i <= num)
+    {
+        if(num % i == 0)
+       {
+            return 0;
+        }
+        i++;
+    }
+    return 1;
+}
 int main()
 {
-    int a,b = 0;
-    char op;
-    scanf ("%d %d %c",&a,&b,&op);
-    if(op == '+')
+    int n;
+    scanf ("%d",&n);
+    if(isPrime(n))
     {
-        int C = a+b;
-        printf("%d",C);
+        printf("密钥安全，密码设置成功");
     }
-    if(op == '-')
+    else
     {
-        int D = a-b;
-        printf("%d",D);
-    }
-    if(op == '*')
-    {
-        int E = a*b;
-        printf("%d",E); 
-    } 
-    if(op == '/')
-    {
-        int F = a/b;
-        printf("%d",F);
+        printf("密钥不安全，请重新输入");
     }
     return 0;
 }
