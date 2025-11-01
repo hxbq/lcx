@@ -3,28 +3,23 @@
 //何熙
 #include<stdio.h>
 int main()
-{ 
-    int score = 0;
-    scanf ("%d",&score);
-    if(89 < score &&score < 100)
+{
+    int num,a,b,c;
+    int count = 0;
+    for(num = 100;num <= 999;num++)
     {
-        printf("A");
-    }
-    if(80 <= score &&score < 90)
-    {
-        printf("B");
-    }
-    if(70 <= score &&score < 80)
-    {
-        printf("C");
-    }
-    if(60 <= score &&score < 70)
-    {
-        printf("D");
-    }
-    if(score < 60)
-    {
-        printf("E");
+        a = num / 100;
+        b = (num / 10) % 10;
+        c = num % 10;
+        if(a*a*a + b*b*b + c*c*c == num)
+        {
+            if(count > 0)
+            {
+            printf(" ");
+            }
+            printf("%d",num);
+            count++;
+        }
     }
     return 0;
 }
