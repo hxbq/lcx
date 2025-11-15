@@ -2,42 +2,30 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
-int isPrime(int num)
-{
-    if(num <= 1)
-    {
-        return 0;
-    }
-    if(num == 2)
-    {
-        return 1;
-    }
-    if(num % 2 == 0 )
-    {
-        return 0;
-    }
-    int i = 3;
-    while(i*i <= num)
-    {
-        if(num % i == 0)
-       {
-            return 0;
-        }
-        i++;
-    }
-    return 1;
-}
 int main()
 {
-    int n;
-    scanf ("%d",&n);
-    if(isPrime(n))
+    int arr[10];
+    int i ,j ,temp;
+    for(i = 0;i < 10;i++)
     {
-        printf("密钥安全，密码设置成功");
+        scanf("%d",&arr[i]);
     }
-    else
+    for(i = 0;i < 9;i++)
     {
-        printf("密钥不安全，请重新输入");
+        for(j = 0;j < 9 - i;j++)
+        {
+            if(arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
     }
+    for(i = 0;i < 10;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
     return 0;
 }
