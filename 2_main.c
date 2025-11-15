@@ -4,22 +4,22 @@
 #include<stdio.h>
 int main()
 {
-    int num,a,b,c;
-    int count = 0;
-    for(num = 100;num <= 999;num++)
+    int arr[3][3];
+    int i, j;
+    for(i = 0;i < 3;i++)
     {
-        a = num / 100;
-        b = (num / 10) % 10;
-        c = num % 10;
-        if(a*a*a + b*b*b + c*c*c == num)
+        for(j = 0;j < 3;j++)
         {
-            if(count > 0)
-            {
-            printf(" ");
-            }
-            printf("%d",num);
-            count++;
+        scanf("%d",&arr[i][j]);
         }
     }
+    for(i = 0;i < 3;i++)
+    {
+        for(j = 0;j < 3;j++)
+        {
+            printf("%d ",arr[j][i]);
+        }
+        printf("\n");
+    }
     return 0;
-}
+}        
