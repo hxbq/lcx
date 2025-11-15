@@ -2,26 +2,15 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
+int one(int a1,int an,int step)
+{
+    int n;
+    n = (an - a1) / step + 1;
+    return (a1 + an) * n / 2;
+}
 int main()
 {
-    int num,a,b,c;
-    int count = 0;
-    num = 100;
-    while(num <= 999)
-    {
-        a = num / 100;
-        b = (num / 10) % 10;
-        c = num % 10;
-        if(a*a*a + b*b*b + c*c*c == num)
-        {
-            if(count > 0)
-            {
-            printf(" ");
-            }
-            printf("%d",num);
-            count++;
-        }
-        num++;
-    }
+    int result = one(1,100,1);
+    printf("%d",result);
     return 0;
 }
