@@ -2,21 +2,23 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
-int main()
+void power(int a, int b, int *result) 
 {
-    int arr[5];
-    for(int i = 0;i < 4;i++)
-    {
-        scanf("%d",&arr[i]);
+    *result = 1;  
+    for (int i = 0; i < b; i++) {
+        *result *= a;  
     }
-    arr[4] = arr[0] + arr[1] + arr[2] + arr[3];
-    for(int i = 0;i < 5;i++)
-    {
-        printf("%d",arr[i]);
-        if(i != 4)
-        {
-            printf(" ");
-        }
+}
+
+int main() 
+{
+    int sum = 0;
+    int square; 
+    for (int i = 1; i <= 5; i++) {
+        power(i, 2, &square);  
+        sum += square;        
     }
+    
+    printf("%d\n", sum);  
     return 0;
 }
