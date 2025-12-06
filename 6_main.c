@@ -1,31 +1,21 @@
-///202510303232
+//202510303232
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
-int arrayone(int arr[],int le)
-{
-    int result1 = 0;
-    for(int i = 0;i < le;i++)
-    {
-        result1 += arr[i];
-    }
-    return result1;
-}
-int arraytwo(int arr[],int le)
-{
-    int result2 = 1;
-    for(int i = 0;i < le;i++)
-    {
-        result2 *= arr[i];
-    }
-    return result2;
-}
+#include<stdlib.h>
 int main()
 {
-    int arr[5];
-    scanf("%d %d %d %d %d",&arr[0],&arr[1],&arr[2],&arr[3],&arr[4]);
-    int one = arrayone(arr,5);
-    int two = arraytwo(arr,5);
-    printf("%d %d",one,two);
+    int *num_ptr = (int *)malloc(5 * sizeof(int));
+    for(int i = 0;i < 5;i++)
+    {
+        scanf("%d",num_ptr + i);
+    }
+    for(int i = 0;i < 5;i++)
+    {
+        printf("%d ",*(num_ptr + i));
+    }
+    printf("\n");
+    free(num_ptr);
+    *num_ptr = NULL;
     return 0;
 }
