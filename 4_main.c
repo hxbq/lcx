@@ -2,15 +2,34 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
-int one(int a1,int an,int step)
+void one(int *arr,int len)
 {
-    int n;
-    n = (an - a1) / step + 1;
-    return (a1 + an) * n / 2;
+    int *p = arr;
+    for(int i = 0;i < len;i++)
+    {
+        (*p)++;
+        p++;
+    }
 }
 int main()
 {
-    int result = one(1,100,1);
-    printf("%d",result);
+    int arr[5];
+    int i;
+    for(i = 0;i < 5;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    one(arr,5);
+    for(i = 0;i < 5;i++)
+    {
+        if(i == 0)
+        {
+            printf("%d",arr[i]);
+        }
+        else
+        {
+            printf(" %d",arr[i]);
+        }
+    }
     return 0;
 }
