@@ -2,23 +2,25 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
-void power(int a, int b, int *result) 
+void one(int *ptr_arr,int len)
 {
-    *result = 1;  
-    for (int i = 0; i < b; i++) {
-        *result *= a;  
+    for(int i = len - 1;i > 0;i--)
+    {
+        *(ptr_arr + i) = *(ptr_arr + i - 1);
     }
+    *ptr_arr = 0;
 }
-
-int main() 
+int main()
 {
-    int sum = 0;
-    int square; 
-    for (int i = 1; i <= 5; i++) {
-        power(i, 2, &square);  
-        sum += square;        
+    int arr[5];
+    for(int i = 0;i < 5;i++)
+    {
+        scanf("%d",&arr[i]);
     }
-    
-    printf("%d\n", sum);  
+    one(arr,5);
+    for(int i = 0;i < 5;i++)
+    {
+        printf("%d ",arr[i]);
+    }
     return 0;
 }
