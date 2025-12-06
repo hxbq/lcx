@@ -2,31 +2,33 @@
 //1078662231@qq.com
 //何熙
 #include<stdio.h>
-void arrayone(int arr[],int len)
+void one(int *arr,int n)
 {
-    for(int i = 0;i < len / 2;i++)
+    for(int i = 0;i < n - 1;i++)
     {
-    int temp = arr[i];
-    arr[i] = arr[len - i - 1];
-    arr[len - i - 1] = temp;
+        for(int j = 0;j < n - 1 - i;j++)
+        {
+            if(*(arr + j) > *(arr + j + 1))
+            {
+                int temp = *(arr + j);
+                *(arr + j) = *(arr + j + 1);
+                *(arr + j + 1) = temp;
+            }
+        }
     }
 }
 int main()
 {
-    int arr[5];
-    int lenth = 5;
-    for (int i = 0; i < 5; i++) 
+    int nums[10];
+    for(int i = 0;i < 10;i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d",nums + i);
     }
-    arrayone(arr,lenth);
-    for(int i = 0;i < 5;i++)
+    one(nums,10);
+     for(int i = 0;i < 10;i++)
     {
-        if(i != 0)
-        {
-            printf(" ");
-        }
-        printf("%d",arr[i]);
-    }  
+        printf("%d ",*(nums + i));
+    }
+    printf("\n");
     return 0;
 }
