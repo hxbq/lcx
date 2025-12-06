@@ -4,22 +4,27 @@
 #include<stdio.h>
 int main()
 {
-    int arr[3][3];
-    int i, j;
-    for(i = 0;i < 3;i++)
+    int arr[5];
+    int i;
+    for(i = 0;i < 5;i++)
     {
-        for(j = 0;j < 3;j++)
-        {
-        scanf("%d",&arr[i][j]);
-        }
+        scanf("%d",&arr[i]);
     }
-    for(i = 0;i < 3;i++)
+    int *p = arr;
+    for(i = 0;i < 5;i++)
     {
-        for(j = 0;j < 3;j++)
-        {
-            printf("%d ",arr[j][i]);
-        }
-        printf("\n");
+        *p *= 2;
+        *p++;
     }
-    return 0;
-}        
+     for(i = 0;i < 5;i++)
+     {
+        if(i == 0)
+        {
+            printf("%d",arr[i]);
+        }
+        else{
+            printf(" %d",arr[i]);
+        }
+     }
+     return 0;
+}
